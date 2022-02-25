@@ -10,9 +10,9 @@ import { ResponsiveBar } from '@nivo/bar';
 //import { Deal } from '../types';
 
 const multiplier = {
-    opportunity: 0.2,
-    'proposal-sent': 0.5,
-    'in-negociation': 0.8,
+    'new-opportunity': 0.2,
+    'team-assessment': 0.5,
+    'tech-transfer': 0.8,
     delayed: 0.3,
 };
 
@@ -42,23 +42,23 @@ export const DealsChart = () => {
         const amountByMonth = Object.keys(dealsByMonth).map(month => {
             return {
                 date: format(new Date(month), 'MMM'),
-                won: dealsByMonth[month]
-                    .filter((deal) => deal.stage === 'won')
+                proposal: dealsByMonth[month]
+                    .filter((deal) => deal.stage === 'proposal')
                     .reduce((acc, deal) => {
                         acc += deal.amount;
                         return acc;
                     }, 0),
                 pending: dealsByMonth[month]
                     .filter(
-                        (deal) => !['won', 'lost'].includes(deal.stage)
+                        (deal) => !['proposal', 'bid'].includes(deal.stage)
                     )
                     .reduce((acc, deal) => {
                      
                         acc += deal.amount * multiplier[deal.stage];
                         return acc;
                     }, 0),
-                lost: dealsByMonth[month]
-                    .filter((deal) => deal.stage === 'lost')
+                bid: dealsByMonth[month]
+                    .filter((deal) => deal.stage === 'bid')
                     .reduce((acc, deal) => {
                         acc -= deal.amount;
                         return acc;
@@ -73,8 +73,8 @@ export const DealsChart = () => {
 
     const range = months.reduce(
         (acc, month) => {
-            acc.min = Math.min(acc.min, month.lost);
-            acc.max = Math.max(acc.max, month.won + month.pending);
+            acc.min = Math.min(acc.min, month.bid);
+            acc.max = Math.max(acc.max, month.proposal + month.pending);
             return acc;
         },
         { min: 0, max: 0 }
@@ -100,7 +100,7 @@ export const DealsChart = () => {
                 <ResponsiveBar
                     data={months}
                     indexBy="date"
-                    keys={['won', 'pending', 'lost']}
+                    keys={['', 'pending', 'bid']}
                     colors={['#61cdbb', '#97e3d5', '#e25c3b']}
                     margin={{ top: 50, right: 50, bottom: 50, left: 0 }}
                     padding={0.3}
@@ -135,7 +135,7 @@ export const DealsChart = () => {
                                 value: 0,
                                 lineStyle: { strokeOpacity: 0 },
                                 textStyle: { fill: '#2ebca6' },
-                                legend: 'Won',
+                                legend: 'Proposal',
                                 legendPosition: 'top-left',
                                 legendOrientation: 'vertical',
                             },
@@ -147,7 +147,7 @@ export const DealsChart = () => {
                                     strokeWidth: 1,
                                 },
                                 textStyle: { fill: '#e25c3b' },
-                                legend: 'Lost',
+                                legend: 'Bid',
                                 legendPosition: 'bottom-left',
                                 legendOrientation: 'vertical',
                             },

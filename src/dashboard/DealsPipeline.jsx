@@ -21,7 +21,7 @@ export const DealsPipeline = () => {
         'deals',
         { page: 1, perPage: 10 },
         { field: 'last_seen', order: 'DESC' },
-        { stage_neq: 'lost', sales_id: identity?.id },
+        { stage_neq: 'bid', sales_id: identity?.id },
         { enabled: Number.isInteger(identity?.id) }
     );
     const [ids, setIds] = useState(unorderedIds);
@@ -29,7 +29,7 @@ export const DealsPipeline = () => {
         const deals = unorderedIds.map(id => data[id]);
         const orderedIds = [];
         stages
-            .filter(stage => stage !== 'won')
+            .filter(stage => stage !== 'proposal')
             .forEach(stage =>
                 deals
                     .filter(deal => deal.stage === stage)

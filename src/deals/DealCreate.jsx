@@ -68,7 +68,7 @@ export const DealCreate = ({ open }) => {
                 <SimpleForm initialValues={{ index: 0 }}>
                     <TextInput
                         source="name"
-                        label="Deal name"
+                        label="Lead (Company) name"
                         fullWidth
                         validate={[required()]}
                     />

@@ -33,7 +33,7 @@ const Header = () => {
                                 alt="Bosch Logo"
                             />
                             <Typography component="span" variant="h5">
-                                Atomic CRM
+                                Sir Inge
                             </Typography>
                         </Box>
                         <Box>
@@ -42,29 +42,32 @@ const Header = () => {
                                 aria-label="Navigation Tabs"
                             >
                                 <Tab
-                                    label={'Dashboard'}
+                                    label={'Home'}
                                     component={Link}
                                     to="/"
                                     value="/"
                                 />
-                                <Tab
-                                    label={'Contacts'}
-                                    component={Link}
-                                    to="/contacts"
-                                    value="/contacts"
-                                />
-                                <Tab
-                                    label={'Companies'}
+                                 <Tab
+                                    label={'Search'}
                                     component={Link}
                                     to="/companies"
                                     value="/companies"
                                 />
+                              
+                             
                                 <Tab
-                                    label={'Deals'}
+                                    label={'Leads'}
                                     component={Link}
                                     to="/deals"
                                     value="/deals"
                                 />
+                                  <Tab
+                                    label={'My Network'}
+                                    component={Link}
+                                    to="/contacts"
+                                    value="/contacts"
+                                />
+                                
                             </Tabs>
                         </Box>
                         <Box display="flex">

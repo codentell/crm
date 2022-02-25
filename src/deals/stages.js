@@ -1,19 +1,19 @@
 export const stages = [
-    'opportunity',
-    'proposal-sent',
-    'in-negociation',
-    'won',
-    'lost',
-    'delayed',
+    'new-opportunity',
+    'team-assessment',
+    'tech-transfer',
+    'proposal',
+    'bid',
+    'contract',
 ];
 
 export const stageNames = {
-    opportunity: 'Opportunity',
-    'proposal-sent': 'Proposal Sent',
-    'in-negociation': 'In Negociation',
-    won: 'Won',
-    lost: 'Lost',
-    delayed: 'Delayed',
+    'new-opportunity': 'New Opportunity',
+    'team-assessment': 'Team Assessment',
+    'tech-transfer': 'Tech Transfer',
+    proposal: 'Proposal',
+    bid: 'Bid',
+    contract: 'Contract',
 };
 
 export const stageChoices = stages.map(type => ({

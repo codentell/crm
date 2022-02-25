@@ -12,12 +12,12 @@ const type = [
     'Website design',
 ];
 const stages = [
-    'opportunity',
-    'proposal-sent',
-    'in-negociation',
-    'won',
-    'lost',
-    'delayed',
+    'new-opportunity',
+    'team-assessment',
+    'tech-transfer',
+    'proposal',
+    'bid',
+    'contract',
 ];
 //const tags = ["new deal", "upsell", "SAV"];
 

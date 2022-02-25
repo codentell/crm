@@ -35,7 +35,7 @@ export const ContactList = () => {
                         to={`/contacts/${id}`}
                         variant="subtitle1"
                     >
-                        {data[id].first_name} {data[id].last_name}
+                        {data[id]?.first_name} {data[id]?.last_name}
                     </Link>
                 </li>
             ))}
