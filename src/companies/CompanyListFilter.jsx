@@ -8,8 +8,8 @@ import {
 } from 'react-admin';
 import { Box } from '@material-ui/core';
 import BusinessIcon from '@material-ui/icons/Business';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+
 
 import { sizes } from './sizes';
 import { sectors } from './sectors';
@@ -30,7 +30,7 @@ export const CompanyListFilter = () => {
                 ))}
             </FilterList>
 
-            <FilterList label="Sector" icon={<LocalShippingIcon />}>
+            <FilterList label="Location" icon={<LocationOnIcon/> }>
                 {sectors.map(sector => (
                     <FilterListItem
                         key={sector.id}
@@ -40,7 +40,17 @@ export const CompanyListFilter = () => {
                 ))}
             </FilterList>
 
-            <FilterList
+            <FilterList label="Services" icon={<LocationOnIcon/>  }>
+                {sectors.map(sector => (
+                    <FilterListItem
+                        key={sector.id}
+                        label={sector.name}
+                        value={{ sector: sector.id }}
+                    />
+                ))}
+            </FilterList>
+
+            {/* <FilterList
                 label="Account manager"
                 icon={<SupervisorAccountIcon />}
             >
@@ -50,7 +60,7 @@ export const CompanyListFilter = () => {
                         sales_id: identity && identity.id,
                     }}
                 />
-            </FilterList>
+            </FilterList> */}
         </Box>
     );
 };

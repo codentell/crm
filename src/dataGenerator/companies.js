@@ -1,8 +1,6 @@
 import { company, internet, address, phone, random } from 'faker/locale/en_US';
 import { randomDate } from './utils';
 
-
-
 const sectors = [
     'Communication Services',
     'Consumer Discretionary',

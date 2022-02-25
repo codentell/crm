@@ -90,10 +90,10 @@ export const CompanyCard = ({ record }) => {
                         </div>
                     </div>
                     <div className={classes.singleStat}>
-                        <DealIcon
+                        {/* <DealIcon
                             color="disabled"
                             className={classes.statIcon}
-                        />
+                        /> */}
                         <div>
                             <Typography
                                 variant="subtitle2"
@@ -102,7 +102,7 @@ export const CompanyCard = ({ record }) => {
                                 {record.nb_deals}
                             </Typography>
                             <Typography variant="caption" color="textSecondary">
-                                {record.nb_deals > 1 ? 'deals' : 'deal'}
+                                {record.nb_deals > 1 ? 'connect' : 'connect'}
                             </Typography>
                         </div>
                     </div>
