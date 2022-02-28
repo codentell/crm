@@ -25,15 +25,8 @@ const Header = () => {
                 <Toolbar variant="dense">
                     <Box flex={1} display="flex" justifyContent="space-between">
                         <Box display="flex" alignItems="center">
-                            <img
-                                className={classes.logo}
-                                src={
-                                    'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg'
-                                }
-                                alt="Bosch Logo"
-                            />
                             <Typography component="span" variant="h5">
-                                Sir Inge
+                                Biolink
                             </Typography>
                         </Box>
                         <Box>
