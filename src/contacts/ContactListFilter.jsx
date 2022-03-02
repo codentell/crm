@@ -108,7 +108,7 @@ export const ContactListFilter = () => {
                     }}
                 />
             </FilterList>
-            <FilterList label="Tags" icon={<LocalOfferIcon />}>
+            {/* <FilterList label="Tags" icon={<LocalOfferIcon />}>
                 {ids &&
                     data &&
                     ids.map(id => (
@@ -128,7 +128,7 @@ export const ContactListFilter = () => {
                             value={{ tags: [id] }}
                         />
                     ))}
-            </FilterList>
+            </FilterList> */}
             <FilterList
                 label="Account manager"
                 icon={<SupervisorAccountIcon />}
