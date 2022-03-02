@@ -1,5 +1,7 @@
 import { company, internet, address, phone, random } from 'faker/locale/en_US';
 import { randomDate } from './utils';
+import { companyData } from './company'
+
 
 const sectors = [
     'Communication Services',
@@ -19,9 +21,11 @@ const sizes = [1, 10, 50, 250, 500];
 
 const regex = /\W+/;
 
+
+
 export const generateCompanies = (db) => {
     return Array.from(Array(55).keys()).map(id => {
-        const name = company.companyName();
+        const name = companyData[0]["Manufacturer"];
         return {
             id,
             name: name,

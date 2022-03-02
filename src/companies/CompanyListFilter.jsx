@@ -30,7 +30,7 @@ export const CompanyListFilter = () => {
                 ))}
             </FilterList>
 
-            <FilterList label="Location" icon={<LocationOnIcon/> }>
+            <FilterList label="Location" icon={<LocationOnIcon/>  }>
                 {sectors.map(sector => (
                     <FilterListItem
                         key={sector.id}
@@ -39,28 +39,6 @@ export const CompanyListFilter = () => {
                     />
                 ))}
             </FilterList>
-
-            <FilterList label="Services" icon={<LocationOnIcon/>  }>
-                {sectors.map(sector => (
-                    <FilterListItem
-                        key={sector.id}
-                        label={sector.name}
-                        value={{ sector: sector.id }}
-                    />
-                ))}
-            </FilterList>
-
-            {/* <FilterList
-                label="Account manager"
-                icon={<SupervisorAccountIcon />}
-            >
-                <FilterListItem
-                    label="Me"
-                    value={{
-                        sales_id: identity && identity.id,
-                    }}
-                />
-            </FilterList> */}
         </Box>
     );
 };

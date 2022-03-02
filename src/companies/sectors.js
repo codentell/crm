@@ -1,13 +1,5 @@
-export const sectors = [
-    'Communication Services',
-    'Consumer Discretionary',
-    'Consumer Staples',
-    'Energy',
-    'Financials',
-    'Health Care',
-    'Industrials',
-    'Information Technology',
-    'Materials',
-    'Real Estate',
-    'Utilities',
-].map(sector => ({ id: sector, name: sector }));
+import { companyData } from '../dataGenerator/company'
+
+const location = ([...new Set(companyData.map((data) => data["Manufacturer Locations"]))])
+export const sectors = location.map(sector => ({ id: sector, name: sector }));
+
