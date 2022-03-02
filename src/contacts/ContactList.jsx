@@ -71,7 +71,7 @@ const ContactListContent = () => {
                             primary={`${contact.first_name} ${contact.last_name}`}
                             secondary={
                                 <>
-                                    {contact.title} at{' '}
+                                    
                                     <ReferenceField
                                         record={contact}
                                         source="company_id"
