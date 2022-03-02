@@ -1,8 +1,8 @@
 import { AuthProvider } from 'react-admin';
 
-localStorage.setItem('username', 'Jane Doe');
+localStorage.setItem('username', 'Rebecca Xi');
 
-export const authProvider: AuthProvider = {
+export const authProvider = {
     login: ({ username }) => {
         localStorage.setItem('username', username);
         // accept all username/password combinations

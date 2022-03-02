@@ -90,7 +90,7 @@ export const CompanyAside = ({
                         source="last_name"
                         render={record =>
                             record
-                                ? `${record.first_name} ${record.last_name}`
+                                ? `Rebecca Xi`
                                 : ''
                         }
                     />
