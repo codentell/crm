@@ -167,7 +167,7 @@ const ContactsIterator = () => {
                                 primary={`${contact.first_name} ${contact.last_name}`}
                                 secondary={
                                     <>
-                                        {contact.company}
+                                        {/* {contact.company} */}
 
                                         {/* {contact.title}{' '} */}
                                         {/* <TagsList record={contact} /> */}
