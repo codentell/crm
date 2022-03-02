@@ -1,8 +1,8 @@
 import { random, lorem } from 'faker/locale/en_US';
 import { add } from 'date-fns';
-
-
 import { randomDate } from './utils';
+import  { companyData } from './company';
+
 
 const type = [
     'Other',
@@ -21,9 +21,13 @@ const stages = [
 ];
 //const tags = ["new deal", "upsell", "SAV"];
 
+
+
 export const generateDeals = (db) => {
-    const deals = Array.from(Array(50).keys()).map(id => {
+    const deals = Array.from(Array(10).keys()).map((id,index) => {
         const company = random.arrayElement(db.companies);
+        console.log("Deals")
+        console.log(company);
         company.nb_deals++;
         const contacts = random.arrayElements(
             db.contacts.filter(contact => contact.company_id === company.id),
@@ -35,13 +39,13 @@ export const generateDeals = (db) => {
         ).toISOString();
         return {
             id,
-            name: lowercaseName[0].toUpperCase() + lowercaseName.slice(1),
+            name: companyData[index]["Manufacturer"],
             company_id: company.id,
             contact_ids: contacts.map(contact => contact.id),
-            type: random.arrayElement(type),
+            type: "",
             stage: random.arrayElement(stages),
-            description: lorem.paragraphs(random.number({ min: 1, max: 4 })),
-            amount: random.number(1000) * 100,
+            description: "Hello World!",
+            amount: "",
             created_at: created_at,
             updated_at: randomDate(new Date(created_at)).toISOString(),
             start_at: randomDate(
