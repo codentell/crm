@@ -23,6 +23,8 @@ const useStyles = makeStyles(theme => ({
 export const DealCard = ({ deal, index }) => {
     const classes = useStyles();
     const redirect = useRedirect();
+    console.log("This deal")
+    console.log(deal.stage);
     if (!deal) return null;
 
     const handleClick = () => {
@@ -65,12 +67,21 @@ export const DealCard = ({ deal, index }) => {
                                     variant="caption"
                                     color="textSecondary"
                                 >
-                                                <Button
+
+                                       { deal.stage != "new-opportunity" ? 
+                                           <Button
                
-                variant="contained"
-                color="secondary"
-                className={classes.createButton}
-        >Contact</Button>
+                                           variant="contained"
+                                           color="secondary"
+                                           className={classes.createButton}
+                    >  Notes </Button> :  <Button
+               
+                                   variant="contained"
+                                   color="secondary"
+                                   className={classes.createButton}
+                           >  Contact</Button>
+                                    }       
+                                             
                                  
                                     {/* {deal.amount.toLocaleString('en-US', {
                                         notation: 'compact',

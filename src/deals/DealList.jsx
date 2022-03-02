@@ -69,7 +69,7 @@ const DealActions = () => {
             <CreateButton
                 basePath="/deals"
                 variant="contained"
-                label="New Deal"
+                label="New Leads"
                 className={classes.createButton}
             />
         </TopToolbar>
