@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ReferenceField, useRedirect } from 'react-admin';
-import { Card, Typography } from '@material-ui/core';
+import { Button, Card, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Draggable } from 'react-beautiful-dnd';
 
@@ -65,14 +65,21 @@ export const DealCard = ({ deal, index }) => {
                                     variant="caption"
                                     color="textSecondary"
                                 >
-                                    {deal.amount.toLocaleString('en-US', {
+                                                <Button
+               
+                variant="contained"
+                color="secondary"
+                className={classes.createButton}
+        >Contact</Button>
+                                 
+                                    {/* {deal.amount.toLocaleString('en-US', {
                                         notation: 'compact',
                                         style: 'currency',
                                         currency: 'USD',
                                         currencyDisplay: 'narrowSymbol',
                                         minimumSignificantDigits: 3,
-                                    })}
-                                    , {deal.type}
+                                    })} */}
+                                    {/* , {deal.type} */}
                                 </Typography>
                             </div>
                         </div>
