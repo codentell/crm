@@ -13,6 +13,8 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 import { sizes } from './sizes';
 import { sectors } from './sectors';
+import { locations } from './locations';
+
 
 export const CompanyListFilter = () => {
     const { identity } = useGetIdentity();
@@ -31,11 +33,11 @@ export const CompanyListFilter = () => {
             </FilterList>
 
             <FilterList label="Location" icon={<LocationOnIcon/>  }>
-                {sectors.map(sector => (
+                {locations.map(l => (
                     <FilterListItem
-                        key={sector.id}
-                        label={sector.name}
-                        value={{ sector: sector.id }}
+                        key={l.id}
+                        label={l.name}
+                        value={{ location: l.id }}
                     />
                 ))}
             </FilterList>

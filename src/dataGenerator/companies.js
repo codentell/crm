@@ -36,6 +36,7 @@ export const generateCompanies = (db) => {
                 .toLowerCase()
                 .replace(regex, '_')}`,
             website: internet.url(),
+            location: companyData[id]["Manufacturer"],
             phone_number: phone.phoneNumber(),
             address: address.streetAddress(),
             zipcode: address.zipCode(),

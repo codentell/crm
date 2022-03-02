@@ -39,6 +39,7 @@ const LoadingGridList = () => {
 const LoadedGridList = () => {
     const { ids, data } = useListContext();
     const classes = useStyles();
+    console.log(data);
 
     if (!ids || !data) return null;
 

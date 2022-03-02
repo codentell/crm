@@ -8,6 +8,7 @@ import { linkToRecord, SelectField } from 'react-admin';
 import { Link } from 'react-router-dom';
 
 import { sectors } from './sectors';
+import { locations } from './locations';
 import { CompanyAvatar } from './CompanyAvatar';
 import { Company } from '../types';
 
@@ -67,6 +68,14 @@ export const CompanyCard = ({ record }) => {
                             choices={sectors}
                             record={record}
                         />
+                       <div>{record.sector}</div>
+                          <SelectField
+                            color="textSecondary"
+                            source="location"
+                            choices={locations}
+                            record={record}
+                        />
+                        
                     </div>
                 </div>
                 <div className={classes.stats}>
