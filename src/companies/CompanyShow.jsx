@@ -90,8 +90,8 @@ const CompanyShowContent = () => {
                                 <Tab
                                     label={
                                         record.nb_deals === 1
-                                            ? '1 deal'
-                                            : `${record.nb_deals} Deals`
+                                            ? '1 lead'
+                                            : `${record.nb_deals} leads`
                                     }
                                 />
                             )}
