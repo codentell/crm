@@ -13,7 +13,7 @@ export const companyData = [
       "Arrangement Category": "Bulk substance production"
     },
     {
-      "Manufacturer": "Bio-Manguinhos Fiocruz (Institute of Technology in Immunobiologicals of the Oswaldo Cruz Foundation)",
+      "Manufacturer": "Bio-Manguinhos Fiocruz",
       "Company Stage": "State-owned enterprise",
       "Company Website": "https://www.ini.fiocruz.br/",
       "Company LinkedIn": "N/A",

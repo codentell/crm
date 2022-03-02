@@ -10,7 +10,7 @@ import { generateDealNotes } from './dealNotes';
 import { finalize } from './finalize';
 import { randomDate } from './utils';
 import  { companyData }  from './company';
-import {  random } from 'faker/locale/en_US';
+import {  address, phone, random } from 'faker/locale/en_US';
 
 console.log(companyData);
 const sizes = [1, 10, 50, 250, 500];
@@ -25,12 +25,12 @@ const test = Array.from(Array(companyData.length).keys()).map(id => {
         location: companyData[id]["Manufacturer Locations"],
         linkedIn: `https://www.linkedin.com/company/${name
             .toLowerCase()}`,
-        website: "",
-        phone_number: "",
-        address: "",
-        zipcode: "",
-        city: "",
-        stateAbbr: "",
+        website: companyData[id]["Company Website"],
+        phone_number: phone.phoneNumber(),
+        address: address.streetAddress(),
+        zipcode: address.zipCode(),
+        city: address.city(),
+        stateAbbr: address.stateAbbr(),
         nb_contacts: 0,
         nb_deals: 0,
         sales_id: 0,
