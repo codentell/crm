@@ -20,7 +20,7 @@ const test = Array.from(Array(companyData.length).keys()).map(id => {
         id,
         name: companyData[id]["Manufacturer"],
         logo: `/logos/${id}.png`,
-        sector: "CMDP",
+        sector: companyData[id]["Manufacturer Type"],
         size: random.arrayElement(sizes),
         location: companyData[id]["Manufacturer Locations"],
         linkedIn: `https://www.linkedin.com/company/${name
