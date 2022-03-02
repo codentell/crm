@@ -152,6 +152,7 @@ const ContactsIterator = () => {
             <List>
                 {ids.map(id => {
                     const contact = data[id];
+                    console.log(contact);
                     return (
                         <ListItem
                             button
@@ -166,8 +167,10 @@ const ContactsIterator = () => {
                                 primary={`${contact.first_name} ${contact.last_name}`}
                                 secondary={
                                     <>
-                                        {contact.title}{' '}
-                                        <TagsList record={contact} />
+                                        {contact.company}
+
+                                        {/* {contact.title}{' '} */}
+                                        {/* <TagsList record={contact} /> */}
                                     </>
                                 }
                             />

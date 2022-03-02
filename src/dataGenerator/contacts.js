@@ -9,7 +9,7 @@ import {
 
 import { randomDate, weightedBoolean } from './utils';
 import { Db } from './types';
-
+import { companyData } from './company';
 
 const genders = ['male', 'female'];
 const status = ['cold', 'cold', 'cold', 'warm', 'warm', 'hot', 'in-contract'];
@@ -25,7 +25,7 @@ export const generateContacts = (db)=> {
     const nbAvailblePictures = 223;
     let numberOfContacts = 0;
 
-    return Array.from(Array(500).keys()).map(id => {
+    return Array.from(Array(250).keys()).map(id => {
         const has_avatar =
             weightedBoolean(25) && numberOfContacts < nbAvailblePictures;
         const gender = random.arrayElement(genders);
@@ -38,13 +38,14 @@ export const generateContacts = (db)=> {
               '.jpeg'
             : undefined;
         const title = fakerCompany.bsAdjective();
-
+        
         if (has_avatar) {
             numberOfContacts++;
         }
 
         // choose company with people left to know
         let company;
+        let index = 0;
         do {
             company = random.arrayElement(db.companies);
         } while (company.nb_contacts >= maxContacts[company.size]);
@@ -68,6 +69,7 @@ export const generateContacts = (db)=> {
             background: lorem.sentence(),
             acquisition: random.arrayElement(['inbound', 'outbound']),
             avatar,
+            company: companyData[Math.floor(Math.random() * companyData.length)]["Manufacturer"],
             first_seen: first_seen,
             last_seen: last_seen,
             has_newsletter: weightedBoolean(30),
