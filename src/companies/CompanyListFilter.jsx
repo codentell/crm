@@ -41,6 +41,14 @@ export const CompanyListFilter = () => {
                     />
                 ))}
             </FilterList>
+
+            <FilterList label="Services" icon={<LocationOnIcon/>  }>
+                <FilterLiveSearch />
+            </FilterList>
+
+            <FilterList label="Coming Soon" icon={<LocationOnIcon/>  }>
+                <FilterLiveSearch />
+            </FilterList>
         </Box>
     );
 };
