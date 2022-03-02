@@ -68,43 +68,33 @@ export const DealCreate = ({ open }) => {
                 <SimpleForm initialValues={{ index: 0 }}>
                     <TextInput
                         source="name"
-                        label="Lead (Company) name *"
+                        label="Lead Name (e.g. Duopharma Biotech)*"
                         fullWidth
                         validate={[required()]}
                     />
                     <TextInput
-                        source="company_type"
-                        label="Company (e.g CDMO) *"
+                        source="contact"
+                        label="Name of Contact (e.g. Feizril Nor bin Nurbi) *"
                         fullWidth
                         validate={[required()]}
                     />
                      <TextInput
                         source="location"
-                        label="Location (e.g US) *"
+                        label="Date of Initial Contact*"
                         fullWidth
                         validate={[required()]}
                     />
-                      <TextInput
-                        source="Company"
-                        label="Company LinkedIn *"
-                        fullWidth
-                        validate={[required()]}
-                    />
+                       <NumberInput source="Budget" fullWidth defaultValue={0} />
 
-                    <TextInput
-                        source="description"
-                        multiline
-                        rows={3}
-                        fullWidth
-                    />
-                    <ReferenceInput
+
+                    {/* <ReferenceInput
                         source="company_id"
                         reference="companies"
                         fullWidth
                         validate={[required()]}
                     >
                         <AutocompleteInput optionText="name" />
-                    </ReferenceInput>
+                    </ReferenceInput> */}
                     <SelectInput
                         source="stage"
                         choices={stageChoices}
@@ -113,11 +103,11 @@ export const DealCreate = ({ open }) => {
                         defaultValue="opportunity"
                     />
                     <SelectInput
-                        source="type"
+                        source="Preferred Arrangement"
                         choices={typeChoices}
                         fullWidth
                     />
-                    <NumberInput source="amount" fullWidth defaultValue={0} />
+                  
                 </SimpleForm>
             </Create>
         </Dialog>
