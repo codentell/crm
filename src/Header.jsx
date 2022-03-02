@@ -26,7 +26,7 @@ const Header = () => {
                     <Box flex={1} display="flex" justifyContent="space-between">
                         <Box display="flex" alignItems="center">
                             <Typography component="span" variant="h5">
-                                Biolink
+                                BioLinked
                             </Typography>
                         </Box>
                         <Box>
